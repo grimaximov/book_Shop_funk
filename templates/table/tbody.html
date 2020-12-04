@@ -1,0 +1,26 @@
+	<tbody>
+		<? foreach ($rows as $row): ?>
+			<tr> 
+				<? foreach ($row as $data): ?>
+					<td> <?= $data; ?></td>
+				<? endforeach; ?>
+				<? if ($is_admin): ?>
+					<td> 
+						<button> 
+							<a href="./<?= $name ?>_edit.php?id=<?= $row[$name . '_id']; ?>"> 
+								Редактировать 
+							</a> 
+						</button> 
+					</td>
+					<td> 
+						<button> 
+							<a href="./<?= $name ?>_delete.php?id=<?= $row[$name . '_id']; ?>"> 
+								Удалить 
+							</a>
+						</button> 
+					</td>
+				<? endif; ?>
+			</tr>
+		<? endforeach; ?>
+	</tbody>
+</table>

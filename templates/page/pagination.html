@@ -1,0 +1,7 @@
+<? for ($i = 1; $i < $pages_count + 1; $i++): ?>
+	<button> 
+		<a href="<?=  $_SERVER['SCRIPT_NAME'] . '?page=' . $i; ?>"> 
+			<?= $i; ?>
+		</a>
+	</button>
+<? endfor; ?>

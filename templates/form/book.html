@@ -1,0 +1,14 @@
+<form method="POST"> 
+	Название: <input type="text" name="name" value="<?= $book_info ? $book_info['book_name']: ''; ?>" /> <br> 
+	Издатель: <select name="publisher"> 
+		<? foreach ($publishers as $publisher): ?>
+			<option value="<?= $publisher['publisher_id']; ?>" <?= ($publisher['publisher_id'] == $book_info['book_publisher_id']) ? 'selected': ''?> > <?= $publisher['publisher_name']; ?></option>
+		<? endforeach; ?>
+	</select> <br>
+	Автор: <select name="author[]" multiple> 
+		<? foreach ($authors as $author): ?>
+			<option value="<?= $author['author_id']; ?>"  <?= (in_array($author['author_id'], explode(',', $book_info['authors_ids']))) ? 'selected': '' ?>> <?= $author['author_name']; ?></option>
+		<? endforeach; ?>
+	</select> <br>
+	<input type="submit" value="Изменить">
+</form>

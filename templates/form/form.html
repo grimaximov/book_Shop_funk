@@ -1,0 +1,6 @@
+<form method="POST">
+	<? foreach ($fields as $field): ?>
+		<input type="<?= $field['type'] ?>" value="<?= $field['value'] ?>" name="<?= $field['name'] ?>" /> <br>
+	<? endforeach; ?>
+	<input type="submit" value="Сохранить">
+</form>

@@ -1,0 +1,13 @@
+<table border="1px">
+	<thead> 
+		<tr>
+			<? foreach ($heads as $head): ?>
+				<th> <?= $head; ?></th>
+			<? endforeach; ?>
+			<? if ($is_admin): ?>
+				<th colspan="2"> 
+					Действия
+				</th>
+			<? endif; ?>
+		</tr>
+	</thead>
